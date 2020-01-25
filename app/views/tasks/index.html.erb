@@ -5,7 +5,7 @@
     <li> <!-- addcheckbox -->
       <%= task.completed ? '[X]':'[ ]' %>
       <%= link_to task.title, task_path(task) %>
-      <%= link_to "Edit", edit_task_path(@task) %>
+      <%= link_to "Edit", edit_path(@task) %>
     </li>
     <% end %>
   </ul>
