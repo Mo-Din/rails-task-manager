@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 
-before_action :set_params, only [:show, :edit, :update, :destroy]
+  before_action :set_params, only: [:show, :edit, :update, :destroy]
 
   def index         # GET /tasks
     @task = Task.all
@@ -15,7 +15,7 @@ before_action :set_params, only [:show, :edit, :update, :destroy]
 
   def create        # POST /tasks
     Task.create(task_params)
-    redirect_to tasks_path
+    redirect_to tasks_path(task)
   end
 
   def edit          # GET /tasks/:id/edit
@@ -32,6 +32,7 @@ before_action :set_params, only [:show, :edit, :update, :destroy]
   end
 
   private
+
   def task_params
     params.require(:task).permit(:title, :details,:completed)
   end
