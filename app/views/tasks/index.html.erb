@@ -1,11 +1,13 @@
-<h1>My Tasks page #index</h1>
+<h1>My Tasks page </h1>
 
   <ul>
     <% @tasks.each do |task| %>
     <li> <!-- addcheckbox -->
       <%= task.completed ? '[X]':'[ ]' %>
       <%= link_to task.title, task_path(task) %>
-      <%= link_to "Edit", edit_task_path(task) %>
+      <%= link_to "Edit", edit_task_path(@task) %>
     </li>
     <% end %>
   </ul>
+
+  <%= link_to "Add new taks", new_task_path %>

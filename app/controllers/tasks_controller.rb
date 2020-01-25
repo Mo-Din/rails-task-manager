@@ -14,7 +14,7 @@ class TasksController < ApplicationController
   end
 
   def create        # POST /tasks
-    Task.create(task_params)
+    task = Task.create(task_params)
     redirect_to tasks_path(task)
   end
 
