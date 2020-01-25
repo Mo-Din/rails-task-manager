@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update, :destroy]
 
   def index         # GET /tasks
-    @task = Task.all
+    @tasks = Task.all
   end
 
   def show          # GET /tasks/:id
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :details,:completed)
+    params.require(:task).permit(:title, :details, :completed)
   end
 
   def set_params
